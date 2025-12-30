@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Vulnerability Scanner</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<!-- 🌌 Dynamic Background Layer -->
+<div class="background"></div>
+
+<div class="container">
+
+    <!-- Header -->
+    <div class="header">
+        <h1>🛡️ Web Vulnerability Scanner</h1>
+        <p class="subtitle">
+            Detection of Web Vulnerability
+        </p>
+    </div>
+
+    <!-- Scan Input Section -->
+    <div class="scan-box">
+        <input 
+            type="text" 
+            id="urlInput" 
+            placeholder="https://example.com"
+            autocomplete="off"
+        >
+        <button onclick="startScan()">🚀 Start Scan</button>
+    </div>
+  
+
+
+    <div class="progress-container hidden">
+    <div class="progress-bar"></div>
+    <span id="progressText">0%</span>
+</div>
+    <!-- Scan Type Section -->
+<div class="scan-type-container">
+    <h2>Select Scan Type</h2>
+
+    <div class="scan-types">
+        <div class="scan-type-card " data-type="full">
+            <div class="icon">🛡️</div>
+            <span>Full Scan</span>
+        </div>
+        <div class="scan-type-card" data-type="quick">
+            <div class="icon">⚡</div>
+            <span>Quick Scan</span>
+        </div>
+        <div class="scan-type-card" data-type="custom">
+            <div class="icon">⚙️</div>
+            <span>Custom Scan</span>
+        </div>
+    </div>
+
+    <input type="hidden" id="selectedScanType" value="full">
+</div>
+
+
+
+    <!-- Loading Overlay -->
+    <div id="loading" class="hidden">
+        <div class="spinner"></div>
+        <p class="loading-text">Scanning target for vulnerabilities...</p>
+    </div>
+
+    <!-- Scan Summary -->
+    <div id="summary" class="summary hidden">
+        <span>🔴 High: <b id="highCount">0</b></span>
+        <span>🟡 Medium: <b id="mediumCount">0</b></span>
+        <span>🟢 Low: <b id="lowCount">0</b></span>
+    </div>
+
+    <!-- Results -->
+    <div id="results" class="results hidden"></div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p class="small">Scan and Find Vulnerabilities</p>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
